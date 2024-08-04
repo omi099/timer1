@@ -10,6 +10,7 @@ const themeToggle = document.getElementById('theme-toggle');
 
 let timerInterval;
 let remainingTime = 0;
+let audioTimeout;
 
 /**
  * Formats time to `MM:SS` format.
@@ -56,6 +57,13 @@ function handleStart() {
       clearInterval(timerInterval);
       alarmAudio.currentTime = 0;
       alarmAudio.play();
+      if (audioTimeout) {
+        clearTimeout(audioTimeout);
+      }
+      audioTimeout = setTimeout(() => {
+        alarmAudio.pause();
+        alarmAudio.currentTime = 0;
+      }, 3000); // Stop audio after 3 seconds
     }
   }, 1000);
 }
@@ -69,6 +77,9 @@ function handleStop() {
   }
   alarmAudio.pause();
   alarmAudio.currentTime = 0;
+  if (audioTimeout) {
+    clearTimeout(audioTimeout);
+  }
 }
 
 /**
