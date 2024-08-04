@@ -1,0 +1,88 @@
+/* Main Container Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Header Style */
+h1 {
+  margin: 0 0 20px;
+  font-size: 32px;
+  color: #fff;
+}
+
+/* Input Containers and Buttons */
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+label {
+  width: 30%;
+}
+
+label span {
+  display: block;
+  font-size: 13px;
+}
+
+.input-area input {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.input-area input:focus {
+  border-color: #fff;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+}
+
+button {
+  background: #ff5f6d;
+  border: none;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background: #ffc371;
+}
+
+.display-time {
+  margin-top: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
