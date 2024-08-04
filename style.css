@@ -5,9 +5,19 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  transition: background-color 0.2s ease;
   font-family: 'Arial', sans-serif;
-  color: #fff;
+}
+
+/* Dark Mode */
+body.light {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: #000;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #2d3436, #3e4551);
+  color: #bdc3c7;
 }
 
 .container {
@@ -18,12 +28,30 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
   max-width: 400px;
   width: 100%;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.light .container {
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .container {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
 }
 
 /* Header Style */
 h1 {
   margin: 0 0 20px;
   font-size: 32px;
+}
+
+body.light h1 {
+  color: #000;
+}
+
+body.dark h1 {
   color: #fff;
 }
 
@@ -52,8 +80,25 @@ label span {
   border: 2px solid transparent;
   border-radius: 5px;
   outline: none;
-  color: #fff;
   transition: all 0.3s;
+}
+
+body.light input {
+  color: #000;
+}
+
+body.dark input {
+  color: #fff;
+}
+
+body.light .input-area input {
+  background: rgba(0, 0, 0, 0.15);
+  border-color: transparent;
+}
+
+body.dark .input-area input {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: transparent;
 }
 
 .input-area input:focus {
@@ -67,14 +112,22 @@ label span {
 }
 
 button {
-  background: #ff5f6d;
   border: none;
   padding: 10px 20px;
-  color: #fff;
   font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+body.light button {
+  background: #ff5f6d;
+  color: #fff;
+}
+
+body.dark button {
+  background: #34aeeb;
+  color: #fff;
 }
 
 button:hover {
@@ -85,4 +138,27 @@ button:hover {
   margin-top: 20px;
   font-size: 40px;
   font-weight: bold;
+}
+
+/* Theme Toggle Button */
+.theme-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 50%;
+  background-color: #000;
+  color: #fff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body.light .theme-button {
+  background-color: #000;
+}
+
+body.dark .theme-button {
+  background-color: #fff;
+  color: #000;
 }
